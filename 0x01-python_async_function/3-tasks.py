@@ -10,7 +10,7 @@ from typing import Coroutine
 random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_random(max_delay: int) -> Coroutine[None, None, float]:
+def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     Creates and returns an asyncio.Task that runs the wait_random coroutine.
 
