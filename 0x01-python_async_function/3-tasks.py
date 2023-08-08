@@ -5,7 +5,6 @@ max_delay and returns an asyncio.Task.
 """
 
 import asyncio
-from typing import Coroutine
 
 random = __import__('0-basic_async_syntax').wait_random
 
