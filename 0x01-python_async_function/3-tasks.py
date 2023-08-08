@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
 """
-a function task_wait_random that takes an integer
-max_delay and returns a asyncio.Task.
+Module description: This module defines a function task_wait_random that takes an integer
+max_delay and returns an asyncio.Task.
 """
 
+import asyncio
+from typing import Coroutine
 
+random = __import__('0-basic_async_syntax').wait_random
+
+
+def task_wait_random(max_delay: int) -> Coroutine[None, None, float]:
+    """
+    Creates and returns an asyncio.Task that runs the wait_random coroutine.
+
+    Args:
+        max_delay (int): The maximum delay time in seconds.
+
+    Returns:
+        asyncio.Task: An asyncio Task that runs the wait_random coroutine.
+    """
+    return asyncio.create_task(random(max_delay))
