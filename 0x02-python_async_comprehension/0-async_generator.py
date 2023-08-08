@@ -9,7 +9,7 @@ import random
 from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncGenerator:
+async def async_generator() -> AsyncGenerator[float, None]:
     """
     Coroutine that generates random numbers asynchronously.
 
