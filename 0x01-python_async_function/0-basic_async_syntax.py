@@ -11,7 +11,8 @@ import random
 
 async def wait_random(max_delay: int = 10) -> float:
     """
-    Asynchronous coroutine that simulates a random delay and returns the delay time.
+    Asynchronous coroutine that simulates a random delay and returns the delay
+    time.
 
     Args:
         max_delay (int): The maximum delay time in seconds (default is 10).
