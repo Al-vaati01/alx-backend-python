@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Module description: This module defines a function task_wait_random that takes an integer
+Module description: This module defines a function task_wait_random
+that takes an integer
 max_delay and returns an asyncio.Task.
 """
 
