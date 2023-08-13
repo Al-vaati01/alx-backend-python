@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
+"""
+type-annotated function zoom_array that takes a tuple
+"""
 from typing import Iterable, SupportsIndex, Union
 
 
 def zoom_array(lst: Iterable[SupportsIndex],
                factor: Union[SupportsIndex, float] = 2
                ) -> Iterable[SupportsIndex]:
+    """
+    takes a tuple lst and returns a tuple
+    """
     zoomed_in: Iterable[SupportsIndex] = [
         item for item in lst
         for i in range(int(factor))
