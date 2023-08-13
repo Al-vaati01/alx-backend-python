@@ -12,5 +12,5 @@ def floor(n: float) -> float:
     Returns:
     float: The floor value of the input number.
     """
-    floor = math.floor(n)
-    return floor
+    fl: float = math.floor(n)
+    return fl
