@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 import math
-"""
-a type-annotated function floor which takes a float
-n as argument and returns the floor of the float.
-"""
 
 
 def floor(n: float) -> float:
     """
-    returns the floor of the float.
+    Returns the floor of a float number.
+
+    Args:
+    n (float): The input float number.
+
+    Returns:
+    float: The floor value of the input number.
     """
     return math.floor(n)
