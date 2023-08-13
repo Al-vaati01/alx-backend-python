@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import math
 """
-returns floor of a float number
+floor: A function to calculate the floor value of a float number.
 """
 
 
