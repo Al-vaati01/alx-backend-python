@@ -2,7 +2,7 @@
 import math
 
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     """
     Returns the floor of a float number.
 
@@ -12,5 +12,4 @@ def floor(n: float) -> float:
     Returns:
     float: The floor value of the input number.
     """
-    fl: float = math.floor(n)
-    return fl
+    return math.floor(n)
