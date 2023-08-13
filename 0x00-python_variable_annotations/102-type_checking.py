@@ -2,7 +2,7 @@
 """
 type-annotated function zoom_array that takes a tuple
 """
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 
 def zoom_array(lst: Tuple,
@@ -18,8 +18,8 @@ def zoom_array(lst: Tuple,
     return zoomed_in
 
 
-array: List = [12, 72, 91]
+array: List[int] = [12, 72, 91]
 
-zoom_2x: Tuple = zoom_array(array)
+zoom_2x: Tuple[List[int]] = zoom_array(array)
 
-zoom_3x: Tuple = zoom_array(array, 3.0)
+zoom_3x: Tuple[Union[List, float]] = zoom_array(array, 3.0)
