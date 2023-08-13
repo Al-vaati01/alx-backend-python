@@ -10,11 +10,11 @@ from typing import Union
 from typing import Tuple
 
 
-def to_kv(k: str, v: Union[float, int]) -> Tuple[str, float]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """
     takes a string k and an int OR float v as arguments and returns a tuple.
     """
-    sqr: Union[float, int] = 0
+    sqr: Union[int, float] = 0
     sqr = v**2
     t: tuple[str, int] = (k, sqr)
     return t
