@@ -2,14 +2,19 @@
 """
 function type annotations
 """
-from typing import Any, Mapping, Union, TypeVar, Optional
+from typing import Any, Mapping, Union, TypeVar
 
 T = TypeVar("T")
 
 
-def safely_get_value(dct: Mapping, key: Any,
-                     default=Union[T, Optional]) -> Union[Any, T]:
-    """The types of the elements"""
+def safely_get_value(
+        dct: Mapping,
+        key: Any,
+        default: Union[T, None] = None
+        ) -> Union[Any, T]:
+    """
+    safely get value
+    """
     if key in dct:
         return dct[key]
     else:
