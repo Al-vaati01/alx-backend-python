@@ -2,10 +2,10 @@
 """
 type-annotated function zoom_array that takes a tuple
 """
-from typing import Tuple
+from typing import Tuple, List
 
 
-def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> Tuple[int, ...]:
+def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
     """
     A function that zooms in on the input tuple by repeating
     each element a specified number of times.
