@@ -6,4 +6,7 @@ a string str2 as arguments and returns a concatenated string
 
 
 def concat(str1: str, str2: str) -> str:
+    """
+    a type-annotated function concat that takes a string str1 and
+    """
     return "{0}{1}".format(str1, str2)
