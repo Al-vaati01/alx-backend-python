@@ -17,6 +17,3 @@ def floor(n: float) -> int:
     """
     fl: int = math.floor(n)
     return fl
-
-
-print(type(floor(3.14)))
