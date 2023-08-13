@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import math
-
+"""
+returns floor of a float number
+"""
 
 def floor(n: float) -> int:
     """
@@ -14,3 +16,6 @@ def floor(n: float) -> int:
     """
     fl: int = math.floor(n)
     return fl
+
+
+print(type(floor(3.14)))
