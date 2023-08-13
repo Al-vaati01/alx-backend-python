@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 """
-takes a float a
-and a float b as arguments and returns their sum as a float.
+adds a and b
 """
 
 
-def add(a: int, b: int) -> float:
+def add(a: float, b: float) -> float:
     """
-    takes a float a
-    and a float b as arguments and returns their sum as a float.
+    takes two float numbers a and b as arguments and returns their sum as a float.
     """
     sum: float = a + b
     return sum
