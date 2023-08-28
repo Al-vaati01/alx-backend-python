@@ -7,6 +7,7 @@ Parameterized a unit test
 import unittest
 from utils import access_nested_map
 from parameterized import parameterized
+from typing import List, Dict, Any
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -18,12 +19,12 @@ class TestAccessNestedMap(unittest.TestCase):
     ])
     def test_access_nested_map(
             self,
-            nest_map: Dict[str, Any],
+            nested_map: Dict[str, Any],
             path: List[str],
             expected_result: Any
     ) -> None:
         """ Test access nested map """
-        self.assertEqual(access_nested_map(nested_map, path), expected)
+        self.assertEqual(access_nested_map(nested_map, path), expected_result)
 
 
 if __name__ == "__main__":
