@@ -94,6 +94,14 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         self.assertEqual(test_class.public_repos(), [])
         self.get_patcher.stop()
 
+    def test_public_repos_with_license(self) -> None:
+        """Test that GithubOrgClient.public_repos returns the correct list of
+        repos that match the license
+        """
+        test_class = GithubOrgClient("test")
+        self.assertEqual(test_class.public_repos("apache-2.0"), [])
+        self.get_patcher.stop()
+
 
 if __name__ == '__main__':
     unittest.main()
