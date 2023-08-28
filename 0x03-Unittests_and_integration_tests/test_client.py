@@ -3,6 +3,8 @@
 import unittest
 from parameterized import parameterized
 from unittest.mock import patch, PropertyMock
+
+from requests import HTTPError
 from client import GithubOrgClient
 
 
@@ -59,3 +61,29 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         test_class = GithubOrgClient("test")
         self.assertEqual(test_class.has_license(repo), expected_return)
+
+
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """TestGithubOrgClient"""
+    @parameterized.expand([
+        ("org_payload"),
+        ("repo_payload"),
+        ("expected_repos"),
+        ("apache2_repos"),
+    ])
+    # setupClass
+    @classmethod
+    def setUpClass(cls):
+        """set up class"""
+        cls.get_patcher = patch('requests.get', side_effect=HTTPError)
+        cls.get_patcher.start()
+
+    # tearDownClass
+    @classmethod
+    def tearDownClass(cls):
+        """tear down class"""
+        cls.get_patcher.stop()
+
+
+if __name__ == '__main__':
+    unittest.main()
