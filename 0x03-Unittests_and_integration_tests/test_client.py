@@ -86,6 +86,14 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """tear down class"""
         cls.get_patcher.stop()
 
+    def test_public_repos(self) -> None:
+        """Test that GithubOrgClient.public_repos returns the correct list of
+        repos
+        """
+        test_class = GithubOrgClient("test")
+        self.assertEqual(test_class.public_repos(), [])
+        self.get_patcher.stop()
+
 
 if __name__ == '__main__':
     unittest.main()
