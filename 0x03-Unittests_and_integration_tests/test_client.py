@@ -47,3 +47,18 @@ class TestGithubOrgClient(unittest.TestCase):
             test_class = GithubOrgClient("test")
             self.assertEqual(test_class.public_repos(), ["Youtube", "Google"])
             mock_get_json.assert_called_once()
+
+    @parameterized.expand([
+        ({'license': {'key': 'my_license'}}, True),
+        ({'license': {'key': 'other_license'}}, True),
+    ])
+    def test_has_license(self):
+        """Test that the result of has_license is the expected one
+        based on the mocked payload
+        """
+        payload = {"license": {"key": "my_license"}}
+        with patch('client.GithubOrgClient._public_repos_url',
+                   new_callable=PropertyMock) as mock_public_repos_url:
+            mock_public_repos_url.return_value = payload
+            test_class = GithubOrgClient("test")
+            self.assertEqual(test_class.has_license(payload), True)
