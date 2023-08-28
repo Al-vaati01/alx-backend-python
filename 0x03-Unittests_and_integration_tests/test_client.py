@@ -71,13 +71,15 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         ("expected_repos"),
         ("apache2_repos"),
     ])
-    @classmethod  # setupClass
+    # setupClass
+    @classmethod
     def setUpClass(cls):
         """set up class"""
         cls.get_patcher = patch('requests.get', side_effect=HTTPError)
         cls.get_patcher.start()
 
-    @classmethod  # tearDownClass
+    # tearDownClass
+    @classmethod
     def tearDownClass(cls):
         """tear down class"""
         cls.get_patcher.stop()
